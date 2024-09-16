@@ -10,6 +10,8 @@ RCON_PASSWORD = os.getenv("RCON_PASSWORD")
 RCON_PORT = int(os.getenv("RCON_PORT", 25575))
 RCON_HOST = os.getenv("RCON_HOST")
 
+#IP = ""
+#PORT = 25565
 #DISCORD_TOKEN = ""
 #RCON_PASSWORD = ""
 #RCON_PORT = 25575
