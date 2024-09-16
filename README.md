@@ -49,6 +49,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 - **/difficulty [difficulty]** - Set the game difficulty.
 - **/effect [player] [effect] [duration] [amplifier]** - Apply an effect to a player.
 - **/summon [entity] [x] [y] [z]** - Summon an entity at specified coordinates.
+- **/spawn [player]** - Teleports player to spawn
 - **/kill [player]** - Kill a player.
 - **/list** - List all players online.
 - **/locate [structure]** - Locate a structure in the world.
