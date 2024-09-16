@@ -2,11 +2,9 @@ import json
 from dotenv import load_dotenv
 import os
 
-IP = ""
-PORT = 25565
-
 load_dotenv()
-
+IP = os.getenv("IP")
+PORT = int(os.getenv("PORT", 25565))
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 RCON_PASSWORD = os.getenv("RCON_PASSWORD")
 RCON_PORT = int(os.getenv("RCON_PORT", 25575))
