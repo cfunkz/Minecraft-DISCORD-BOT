@@ -57,7 +57,7 @@ async def query_minecraft_server(ip: str, port: int):
         print(f"Error querying the server: {error}")
         return {"online": False}
 
-def check_admin_role(interaction):
+def check_admin_role(interaction) -> bool:
     return any(role.id in ALLOWED_ROLE_ID for role in interaction.user.roles)
 
 @bot.event
@@ -106,7 +106,8 @@ async def minecraft(interaction: discord.Interaction):
         )
         embed.set_footer(text="Server might be down or unreachable", icon_url="https://i.imgur.com/75gA21p.png")
         await interaction.followup.send(embed=embed)
-
+        
+@app_commands.check(check_admin_role)
 @server_group.command(name="give", description="Give an item to a player")
 async def give(interaction: discord.Interaction, user: str, item: str, amount: int=1):
     if not check_admin_role(interaction):
@@ -130,7 +131,7 @@ async def give(interaction: discord.Interaction, user: str, item: str, amount: i
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
     
-
+@app_commands.check(check_admin_role)
 @server_group.command(name="teleport", description="Teleport a player to another player")
 async def teleport(interaction: discord.Interaction, player1: str, player2: str):
     if not check_admin_role(interaction):
@@ -154,6 +155,7 @@ async def teleport(interaction: discord.Interaction, player1: str, player2: str)
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="spawn", description="Teleport a player to the spawn")
 async def spawn(interaction: discord.Interaction, player: str):
     if not check_admin_role(interaction):
@@ -177,6 +179,7 @@ async def spawn(interaction: discord.Interaction, player: str):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="kick", description="Kick a player from the server")
 async def kick(interaction: discord.Interaction, player: str, reason: str):
     if not check_admin_role(interaction):
@@ -200,6 +203,7 @@ async def kick(interaction: discord.Interaction, player: str, reason: str):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="ban", description="Ban a player from the server")
 async def ban(interaction: discord.Interaction, player: str, reason: str):
     if not check_admin_role(interaction):
@@ -223,6 +227,7 @@ async def ban(interaction: discord.Interaction, player: str, reason: str):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="unban", description="Unban a player from the server")
 async def unban(interaction: discord.Interaction, player: str):
     if not check_admin_role(interaction):
@@ -246,6 +251,7 @@ async def unban(interaction: discord.Interaction, player: str):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="advancement", description="Grant or revoke an advancement")
 async def advancement(interaction: discord.Interaction, action: str, player: str, advancement: str):
     if not check_admin_role(interaction):
@@ -273,6 +279,7 @@ async def advancement(interaction: discord.Interaction, action: str, player: str
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="summon", description="Summon an entity at specified coordinates")
 async def summon(interaction: discord.Interaction, entity: str, x: int, y: int, z: int):
     if not check_admin_role(interaction):
@@ -295,7 +302,8 @@ async def summon(interaction: discord.Interaction, entity: str, x: int, y: int, 
 	    )
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
-    
+
+@app_commands.check(check_admin_role)
 @server_group.command(name="setworldspawn", description="Summon an entity at specified coordinates")
 async def setspawn(interaction: discord.Interaction, x: int, y: int, z: int):
     if not check_admin_role(interaction):
@@ -319,6 +327,7 @@ async def setspawn(interaction: discord.Interaction, x: int, y: int, z: int):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="weather", description="Change the weather in the game")
 async def weather(interaction: discord.Interaction, weather_type: str, duration: int):
     if not check_admin_role(interaction):
@@ -346,6 +355,7 @@ async def weather(interaction: discord.Interaction, weather_type: str, duration:
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="time", description="Set the time of day")
 async def time(interaction: discord.Interaction, time_of_day: str):
     if not check_admin_role(interaction):
@@ -373,6 +383,7 @@ async def time(interaction: discord.Interaction, time_of_day: str):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="effect", description="Apply or remove a status effect from a player")
 async def effect(interaction: discord.Interaction, action: str, player: str, effect: str, duration: int, amplifier: int = 0):
     if not check_admin_role(interaction):
@@ -400,6 +411,7 @@ async def effect(interaction: discord.Interaction, action: str, player: str, eff
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="kill", description="Kill a player or entity")
 async def kill(interaction: discord.Interaction, target: str):
     if not check_admin_role(interaction):
@@ -422,7 +434,8 @@ async def kill(interaction: discord.Interaction, target: str):
 	    )
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
-    
+
+@app_commands.check(check_admin_role)
 @server_group.command(name="xp", description="Adds XP or LEVEL to a player")
 @app_commands.describe(
     action="Action to perform (add, set, query)",
@@ -470,6 +483,7 @@ async def add_xp(
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="locate", description="Locate a specific structure or biome")
 async def locate(interaction: discord.Interaction, structure: str):
     if not check_admin_role(interaction):
@@ -528,7 +542,8 @@ async def seed(interaction: discord.Interaction):
     )
     embed.set_footer(text="World seed fetched successfully.")
     await interaction.response.send_message(embed=embed)
-    
+
+@app_commands.check(check_admin_role) 
 @server_group.command(name="reload", description="Reload server")
 async def reload(interaction: discord.Interaction):
     if not check_admin_role(interaction):
@@ -544,6 +559,7 @@ async def reload(interaction: discord.Interaction):
     embed.set_footer(text=f"Response: {response}")
     await interaction.response.send_message(embed=embed)
 
+@app_commands.check(check_admin_role)
 @server_group.command(name="difficulty", description="Change the game difficulty")
 async def difficulty(interaction: discord.Interaction, level: str):
     if not check_admin_role(interaction):
