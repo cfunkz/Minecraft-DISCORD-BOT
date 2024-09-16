@@ -39,13 +39,13 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 
 ### Administration Commands
 - **/give [item] [amount] [player]** - Give items to a player.
-- **/xp [amount] [player]** - Give experience points to a player.
+- **/xp [add|set|query] [player] [amount] [points|levels]** - Give experience points to a player.
 - **/time [day|night|midnight|noon"]** - Set the time of day.
 - **/weather [clear|rain|thunder]** - Set the weather.
 - **/ban [player] [reason]** - Ban a player.
 - **/unban [player]** - Unban a player.
 - **/kick [player] [reason]** - Kick a player from the server.
-- **/advancement [player] [advancement]** - Give an advancement to a player.
+- **/advancement [grant|revoke] [player] [advancement]** - Give an advancement to a player.
 - **/difficulty [difficulty]** - Set the game difficulty.
 - **/effect [player] [effect] [duration] [amplifier]** - Apply an effect to a player.
 - **/summon [entity] [x] [y] [z]** - Summon an entity at specified coordinates.
@@ -55,6 +55,6 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 - **/locate [structure]** - Locate a structure in the world.
 - **/reload** - Reload server configurations.
 - **/setworldspawn [x] [y] [z]** - Set the world spawn point.
-- **/teleport [player] [x] [y] [z]** - Teleport a player to specified coordinates.
+- **/teleport [player] [player2]** - Teleport a player to specified coordinates.
 
 For anything you wish to be added, let me know :)
