@@ -25,9 +25,9 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 ## Commands
 
 ### Admin Roles
-- **/addadmin [role_id]** - Add a role ID to the list of admin roles.
-- **/removeadmin [role_id]** - Remove a role ID from the list of admin roles.
-- **/viewadmins** - View all admin role IDs.
+- **/role add [role_id]** - Add a role ID to the list of admin roles.
+- **/role add [role_id]** - Remove a role ID from the list of admin roles.
+- **/role view** - View all admin role IDs.
 
 ### Server User Commands
 - **/status** - Get the server status.
