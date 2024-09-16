@@ -8,7 +8,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
    - Create a `.env` file in the same directory as `config.py`.
    - Add the following entries with your specific details:
      ```env
-     DISCORD_TOKEN=your_discord_token
+     DISCORD_TOKEN=discord_bot_token
      IP=your_ip_or_domain               # IP address of the Minecraft server
      PORT=25565                         # Port number of the Minecraft server
      RCON_PASSWORD=your_rcon_password   # Rcon password
