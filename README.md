@@ -5,23 +5,20 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 ## Configuration
 
 1. **Set up your environment variables:**
-2.  - Set the Minecraft server IP and port in `config.py`:
-     ```python
-     IP = "82.165.63.11"    # IP address of the Minecraft server
-     PORT = 25565           # Port number of the Minecraft server
-     ```
    - Create a `.env` file in the same directory as `config.py`.
    - Add the following entries with your specific details:
      ```env
      DISCORD_TOKEN=your_discord_token
-     RCON_PASSWORD=your_rcon_password
-     RCON_PORT=25575  # Default is 25575; change if different
-     RCON_HOST=your_rcon_host
+     IP = ""    # IP address of the Minecraft server
+     PORT = 25565           # Port number of the Minecraft server
+     RCON_PASSWORD=your_rcon_password #Rcon password
+     RCON_PORT=25575  #Rcon Port
+     RCON_HOST=your_rcon_host #Rcon IP, same as server ip usually
      ```
      
-3. **Optional:** If you do not want to use the `.env` file for any reason, you can hardcode the values directly in `config.py`.
+2. **Optional:** If you do not want to use the `.env` file for any reason, you can hardcode the values directly in `config.py`.
 
-4. **Admin Roles:**
+3. **Admin Roles:**
    - Admin roles are managed through `admin_roles.json`.
    - Update this file to include the role IDs that should have administrative privileges with `/roles add`, `/roles remove` and `/roles view`.
 
