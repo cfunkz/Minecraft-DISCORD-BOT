@@ -19,7 +19,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 2. **Optional:** If you do not want to use the `.env` file for any reason, you can hardcode the values directly in `config.py`.
 
 3. **Admin Roles:**
-   - Admin roles are managed through `admin_roles.json`.
+   - Admin roles are managed through `admin_roles.json` which is created upon bots first startup.
    - Update this file to include the role IDs that should have administrative privileges with `/roles add`, `/roles remove` and `/roles view`.
 
 ## Commands
