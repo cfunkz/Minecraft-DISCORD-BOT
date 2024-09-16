@@ -40,7 +40,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 ### Administration Commands
 - **/give [item] [amount] [player]** - Give items to a player.
 - **/xp [amount] [player]** - Give experience points to a player.
-- **/time [day|night]** - Set the time of day.
+- **/time [day|night|midnight|noon"]** - Set the time of day.
 - **/weather [clear|rain|thunder]** - Set the weather.
 - **/ban [player] [reason]** - Ban a player.
 - **/unban [player]** - Unban a player.
