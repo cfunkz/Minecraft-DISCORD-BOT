@@ -4,7 +4,7 @@ import os
 
 IP = "82.165.63.11"
 PORT = 25565
-# Load environment variables from the .env file
+
 load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
