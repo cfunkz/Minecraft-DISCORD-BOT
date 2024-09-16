@@ -2,7 +2,7 @@ import json
 from dotenv import load_dotenv
 import os
 
-IP = "82.165.63.11"
+IP = ""
 PORT = 25565
 
 load_dotenv()
