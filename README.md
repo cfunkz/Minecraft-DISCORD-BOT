@@ -5,7 +5,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 ## Configuration
 
 1. **Set up your environment variables:**
-2.  - Set the Minecraft server IP and port directly in `config.py`:
+2.  - Set the Minecraft server IP and port in `config.py`:
      ```python
      IP = "82.165.63.11"    # IP address of the Minecraft server
      PORT = 25565           # Port number of the Minecraft server
