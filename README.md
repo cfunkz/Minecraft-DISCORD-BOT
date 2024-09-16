@@ -20,7 +20,7 @@ This bot allows managing Minecraft server using RCON through discord. App comman
 
 3. **Admin Roles:**
    - Admin roles are managed through `admin_roles.json` which is created upon bots first startup.
-   - Update this file to include the role IDs that should have administrative privileges with `/roles add`, `/roles remove` and `/roles view`.
+   - Update this file to include the role IDs that should have admin or add them with `/roles add`, `/roles remove` and `/roles view` commands in discord (Only allowed for users with moderation privileges on the given discord channel).
 
 ## Commands
 
