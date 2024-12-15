@@ -1,3 +1,8 @@
+![Downloads](https://img.shields.io/github/downloads/cfunkz/Minecraft-DISCORD-BOT/total)
+![Version](https://img.shields.io/github/release/cfunkz/Minecraft-DISCORD-BOT.svg)
+![Total Commits](https://img.shields.io/github/commit-activity/t/cfunkz/Minecraft-DISCORD-BOT)
+
+
 # Minecraft RCON Bot
 
 This bot allows managing Minecraft server using RCON through discord. App commands.
